@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
         foregroundColor: Colors.white,
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
             child: ElevatedButton(onPressed: () {}, child: Text("Insert")),
