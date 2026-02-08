@@ -38,4 +38,8 @@ class DbHandler {
     final list = await db!.query('DatabaseTable');
     return list;
   }
+
+  deleteData() {
+
+  }
 }

@@ -18,13 +18,49 @@ class HomeScreen extends StatelessWidget {
         children: [
           Center(
             child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.blueAccent, // Button color
+                shadowColor: Colors.blueGrey,      // Shadow color
+                elevation: 5,                        // Elevation
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12), // Rounded corners
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                textStyle: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
               onPressed: () async{
                 await DbHandler().insertData('Anshu', 20);
-                await DbHandler().insertData('Ansh', 20);
+              },
+              child: Text("Insert"),
+            ),
+          ),
+          SizedBox(height: 20,),
+          Center(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.blueAccent, // Button color
+                shadowColor: Colors.blueGrey,      // Shadow color
+                elevation: 5,                        // Elevation
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12), // Rounded corners
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                textStyle: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onPressed: () async{
+                await DbHandler().insertData('Anshu', 20);
                 final data = await DbHandler().readData();
                 print(data);
               },
-              child: Text("Insert"),
+              child: Text("Read"),
             ),
           ),
         ],
