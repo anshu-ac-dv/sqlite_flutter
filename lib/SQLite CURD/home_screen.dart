@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sqlite_flutter/DB%20Handler/db_handler.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -16,7 +17,14 @@ class HomeScreen extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Center(
-            child: ElevatedButton(onPressed: () {}, child: Text("Insert")),
+            child: ElevatedButton(
+              onPressed: () async{
+                await DbHandler().insertData('Anshu', 20);
+                final data = await DbHandler().readData();
+                print(data);
+              },
+              child: Text("Insert"),
+            ),
           ),
         ],
       ),
