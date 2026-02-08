@@ -20,6 +20,7 @@ class HomeScreen extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () async{
                 await DbHandler().insertData('Anshu', 20);
+                await DbHandler().insertData('Ankita', 20);
                 final data = await DbHandler().readData();
                 print(data);
               },
