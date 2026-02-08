@@ -16,6 +16,7 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          // This is the button for inserting data into the database
           Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -39,6 +40,7 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           SizedBox(height: 20,),
+          // This is the button for reading data from the database
           Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -61,6 +63,56 @@ class HomeScreen extends StatelessWidget {
                 print(data);
               },
               child: Text("Read"),
+            ),
+          ),
+          // This is the button for deleting data from the database
+          SizedBox(height: 20,),
+          Center(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.blueAccent, // Button color
+                shadowColor: Colors.blueGrey,      // Shadow color
+                elevation: 5,                        // Elevation
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12), // Rounded corners
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                textStyle: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onPressed: () async{
+                await DbHandler().deleteData(20);
+                print("Data Deleted");
+              },
+              child: Text("Delete"),
+            ),
+          ),
+          SizedBox(height: 20,),
+          // This is the button for deleting data from the database
+          Center(
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                foregroundColor: Colors.white,
+                backgroundColor: Colors.blueAccent, // Button color
+                shadowColor: Colors.blueGrey,      // Shadow color
+                elevation: 5,                        // Elevation
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12), // Rounded corners
+                ),
+                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                textStyle: const TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              onPressed: () async{
+                await DbHandler().deleteData(20);
+                print("Data Updated");
+              },
+              child: Text("Update"),
             ),
           ),
         ],
