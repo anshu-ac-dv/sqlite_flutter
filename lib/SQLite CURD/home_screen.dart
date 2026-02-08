@@ -109,7 +109,7 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               onPressed: () async{
-                await DbHandler().deleteData(20);
+                await DbHandler().updateData(20,{'name':'Anshjs','age':23} );
                 print("Data Updated");
               },
               child: Text("Update"),

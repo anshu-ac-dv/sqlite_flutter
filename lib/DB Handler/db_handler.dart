@@ -51,14 +51,14 @@ class DbHandler {
   }
 
   // Delete data in the database
-  deleteData(int id) async{
+  deleteData(int id) async {
     Database? db = await database();
     await db!.delete('DatabaseTable', where: 'id = ?', whereArgs: [id]);
   }
 
   // Update data in the database
-  updateData(String name, int age) async{
+  updateData(int id, Map<String, dynamic> data) async {
     Database? db = await database();
-
+    await db!.update('DatabaseTable', data, where: 'id = ?', whereArgs: [25]);
   }
 }
