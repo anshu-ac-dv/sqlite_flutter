@@ -27,7 +27,7 @@ class DbHandler {
     return _database!;
   }
 
-  insertData(int id, String name, int age) async {
+  insertData(String name, int age) async {
     Database? db = await database();
     Map<String, dynamic> map = {'name': name, 'age': age};
     await db!.insert('DatabaseTable', map);
