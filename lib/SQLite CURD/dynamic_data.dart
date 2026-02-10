@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:sqlite_flutter/DB%20Handler/db_handler.dart';
-import 'package:path/path.dart';
 import 'package:sqlite_flutter/Models/models_classes.dart';
 
 class DynamicData extends StatelessWidget {
