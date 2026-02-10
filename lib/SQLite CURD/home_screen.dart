@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sqlite_flutter/DB%20Handler/db_handler.dart';
+import 'package:sqlite_flutter/Models/models_classes.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -22,43 +23,50 @@ class HomeScreen extends StatelessWidget {
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.blueAccent, // Button color
-                shadowColor: Colors.blueGrey,      // Shadow color
-                elevation: 5,                        // Elevation
+                shadowColor: Colors.blueGrey, // Shadow color
+                elevation: 5, // Elevation
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12), // Rounded corners
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 30,
+                ),
                 textStyle: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onPressed: () async{
-                await DbHandler().insertData('Anshu', 20);
+              onPressed: () async {
+                await DbHandler().insertData(
+                  ModelsClasses(name: 'An', age: 226, id: 25),
+                );
               },
               child: Text("Insert"),
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 20),
           // This is the button for reading data from the database
           Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.blueAccent, // Button color
-                shadowColor: Colors.blueGrey,      // Shadow color
-                elevation: 5,                        // Elevation
+                shadowColor: Colors.blueGrey, // Shadow color
+                elevation: 5, // Elevation
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12), // Rounded corners
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 30,
+                ),
                 textStyle: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onPressed: () async{
-                await DbHandler().insertData('Anshu', 20);
+              onPressed: () async {
                 final data = await DbHandler().readData();
                 print(data);
               },
@@ -66,50 +74,56 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           // This is the button for deleting data from the database
-          SizedBox(height: 20,),
+          SizedBox(height: 20),
           Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.blueAccent, // Button color
-                shadowColor: Colors.blueGrey,      // Shadow color
-                elevation: 5,                        // Elevation
+                shadowColor: Colors.blueGrey, // Shadow color
+                elevation: 5, // Elevation
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12), // Rounded corners
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 30,
+                ),
                 textStyle: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onPressed: () async{
+              onPressed: () async {
                 await DbHandler().deleteData(20);
                 print("Data Deleted");
               },
               child: Text("Delete"),
             ),
           ),
-          SizedBox(height: 20,),
+          SizedBox(height: 20),
           // This is the button for deleting data from the database
           Center(
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
                 foregroundColor: Colors.white,
                 backgroundColor: Colors.blueAccent, // Button color
-                shadowColor: Colors.blueGrey,      // Shadow color
-                elevation: 5,                        // Elevation
+                shadowColor: Colors.blueGrey, // Shadow color
+                elevation: 5, // Elevation
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12), // Rounded corners
                 ),
-                padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 30),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 50,
+                  vertical: 30,
+                ),
                 textStyle: const TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              onPressed: () async{
-                await DbHandler().updateData(20,{'name':'Anshjs','age':23} );
+              onPressed: () async {
+                await DbHandler().updateData(20, {'name': 'Anshjs', 'age': 23});
                 print("Data Updated");
               },
               child: Text("Update"),

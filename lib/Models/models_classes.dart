@@ -3,7 +3,7 @@ class ModelsClasses {
   final String name;
   final int age;
 
-  ModelsClasses({required this.id, required this.name, required this.age});
+  ModelsClasses({required this.name, required this.age, required this.id});
 
   factory ModelsClasses.fromMap(Map<String, dynamic> map) {
     return ModelsClasses(id: map['id'], name: map['name'], age: map['age']);

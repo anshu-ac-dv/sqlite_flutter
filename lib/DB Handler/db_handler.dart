@@ -40,7 +40,7 @@ class DbHandler {
   // Insert data into the database
   insertData(ModelsClasses modelsClasses) async {
     Database? db = await database();
-    await db!.insert('DatabaseTable', modelsClasses.toMap());
+    await db.insert('DatabaseTable', modelsClasses.toMap());
   }
 
   // Read data from the database
