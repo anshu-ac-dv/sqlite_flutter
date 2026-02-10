@@ -44,10 +44,10 @@ class DbHandler {
   }
 
   // Read data from the database
-  readData() async {
+  Future<List<ModelsClasses>> readData() async {
     Database? db = await database();
     final list = await db!.query('DatabaseTable');
-    return list;
+    return list.map((e) => ModelsClasses.fromMap(e)).toList();
   }
 
   // Delete data in the database

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sqlite_flutter/DB%20Handler/db_handler.dart';
 import 'package:sqlite_flutter/Models/models_classes.dart';
+import 'package:sqlite_flutter/SQLite CURD/storage_list.dart';
+
 
 class DynamicData extends StatelessWidget {
   DynamicData({super.key});
@@ -53,7 +55,7 @@ class DynamicData extends StatelessWidget {
                 await DbHandler().insertData(
                   ModelsClasses(
                     name: nameController.text,
-                    age: int.parse(ageController.text),// '20' => 20
+                    age: int.parse(ageController.text), // '20' => 20
                   ),
                 );
                 print("Data Inserted");
@@ -71,6 +73,15 @@ class DynamicData extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => StorageList()),
+          );
+        },
+        child: Icon(Icons.data_array),
       ),
     );
   }
