@@ -2,6 +2,7 @@ import 'dart:io';
 import 'package:path_provider/path_provider.dart';
 import 'package:sqflite/sqflite.dart';
 import 'package:path/path.dart';
+import 'package:sqlite_flutter/Models/models_classes.dart';
 
 // This is the database helper class
 class DbHandler {
@@ -37,10 +38,9 @@ class DbHandler {
   }
 
   // Insert data into the database
-  insertData(String name, int age) async {
+  insertData(ModelsClasses modelsClasses) async {
     Database? db = await database();
-    Map<String, dynamic> map = {'name': name, 'age': age};
-    await db!.insert('DatabaseTable', map);
+    await db!.insert('DatabaseTable', modelsClasses.toMap());
   }
 
   // Read data from the database
