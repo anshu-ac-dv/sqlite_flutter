@@ -3,7 +3,6 @@ import 'package:sqlite_flutter/DB%20Handler/db_handler.dart';
 import 'package:sqlite_flutter/Models/models_classes.dart';
 import 'package:sqlite_flutter/SQLite CURD/storage_list.dart';
 
-
 class DynamicData extends StatelessWidget {
   DynamicData({super.key});
 
